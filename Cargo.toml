@@ -1,0 +1,9 @@
+[package]
+
+name = "rust-gzip"
+version = "0.0.1"
+authors = ["Francis Nimick <fnimick@gmail.com>"]
+
+[lib]
+name = "rgzip"
+crate-type = ["staticlib"]
