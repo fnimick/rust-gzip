@@ -37,8 +37,7 @@ impl<'a> GzBitReader<'a> {
         Some(bit)
     }
 
-    /// reads bits in little-endian form, interprets them in big-endian
-    /// as per gzip spec
+    /// reads bits in least to most significant order
     pub fn read_bits(&mut self, count: u32) -> Option<u32> {
         let mut bit: u32;
         let mut value: u32 = 0;
@@ -49,7 +48,7 @@ impl<'a> GzBitReader<'a> {
         Some(value)
     }
 
-    /// Read bits in big-endian form
+    /// reads bits in most to least significant order
     pub fn read_bits_rev(&mut self, count: u32) -> Option<u32> {
         let mut bit: u32;
         let mut value: u32 = 0;

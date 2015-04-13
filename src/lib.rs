@@ -37,7 +37,7 @@ mod gz_reader;
 /////////////////////////////////////////////////////////////////////
 
 /// The main decompression function
-/// Assumption: The Vec given to this function is a gzipped buffer
+/// return a null pointer on failure, let the caller clean up
 
 #[no_mangle]
 pub extern "C" fn decompress_gzip_to_heap(buf: *const c_void,
