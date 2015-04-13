@@ -173,10 +173,11 @@ fn compute_code_table(next_code: &mut Vec<u32>, ranges: &[HuffmanRange])
         }
         let bit_length = ranges[active_range].bit_length as usize;
         if bit_length > 0 {
+            let tree_bits = next_code[bit_length - 1] as usize;
             *next_code.get_mut(bit_length - 1).unwrap() += 1;
             ret.push(TreeNode {
                 len: bit_length,
-                bits: next_code[bit_length - 1] as usize,
+                bits: tree_bits,
                 label: n as usize
             });
         }
